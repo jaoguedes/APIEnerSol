@@ -38,6 +38,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Orcamento::class, 'usuario_id');
     }
+
+    public function placas()
+    {
+        return $this->hasMany(Placa::class, 'idUser');
+    }
     /**
      * The attributes that should be cast.
      *

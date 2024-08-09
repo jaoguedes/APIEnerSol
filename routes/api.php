@@ -7,6 +7,7 @@ use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ManutencaoController;
 use App\Http\Controllers\OrcamentoController;
+use App\Http\Controllers\PlacaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,12 @@ use App\Http\Controllers\OrcamentoController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::get('placas', [PlacaController::class, 'index']);
+Route::get('placas/{id}', [PlacaController::class, 'show']);
+Route::post('placas', [PlacaController::class, 'store']);
+Route::put('placas/{id}', [PlacaController::class, 'update']);
+Route::delete('placas/{id}', [PlacaController::class, 'destroy']);
 
 Route::get('orcamentos', [OrcamentoController::class, 'index']);
 Route::get('orcamentos/{id}', [OrcamentoController::class, 'show']);
