@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ManutencaoController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,6 +17,12 @@ use App\Http\Controllers\UserController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::get('/manutencao', [ManutencaoController::class, 'index']);
+Route::get('/manutencao/{id}', [ManutencaoController::class, 'show']);
+Route::post('/manutencao', [ManutencaoController::class, 'store']);
+Route::put('/manutencao/{id}', [ManutencaoController::class, 'update']);
+Route::delete('/manutencao/{id}', [ManutencaoController::class, 'destroy']);
 
 Route::get('/fornecedores', [FornecedorController::class, 'index']);
 Route::get('/fornecedores/{id}', [FornecedorController::class, 'show']);
