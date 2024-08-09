@@ -21,4 +21,8 @@ class Fornecedor extends Model
         'tamanho',
     ];
 
+    public function orcamentos()
+    {
+        return $this->hasMany(Orcamento::class, 'fornecedor_id');
+    }
 }

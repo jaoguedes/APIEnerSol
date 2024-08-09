@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ManutencaoController;
+use App\Http\Controllers\OrcamentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,12 @@ use App\Http\Controllers\ManutencaoController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::get('orcamentos', [OrcamentoController::class, 'index']);
+Route::get('orcamentos/{id}', [OrcamentoController::class, 'show']);
+Route::post('orcamentos', [OrcamentoController::class, 'store']);
+Route::put('orcamentos/{id}', [OrcamentoController::class, 'update']);
+Route::delete('orcamentos/{id}', [OrcamentoController::class, 'destroy']);
 
 Route::get('/manutencao', [ManutencaoController::class, 'index']);
 Route::get('/manutencao/{id}', [ManutencaoController::class, 'show']);

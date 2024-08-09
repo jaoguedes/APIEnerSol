@@ -13,5 +13,9 @@ class Manutencao extends Model
         'nomeDaEquipe',
         'preco',
     ];
-    
+
+    public function orcamentos()
+    {
+        return $this->hasMany(Orcamento::class, 'manutencao_id');
+    }
 }
